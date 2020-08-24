@@ -1,11 +1,9 @@
 <?php
 
-use Illuminate\Support\Str;
-
 /**
  * Most information which is given here will only be used on the setup.
  * It will not update, add or delete anything on your SES, SNS, S3 Account until you run
- * `php artisan ses:setup`
+ * `php artisan ses:setup`.
  *
  * For local testing of your implementation I recommend Expose to
  */

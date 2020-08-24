@@ -1,4 +1,5 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Models;
 
 use Illuminate\Database\Eloquent\Model;

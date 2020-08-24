@@ -1,4 +1,5 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -51,7 +52,7 @@ class SetupSesInboundCommand extends Command
     protected function defaultRecipients($domain)
     {
         // Domain and all of its subdomains
-        return $domain . ' .' . $domain;
+        return $domain.' .'.$domain;
     }
 
     protected function askForAccountId()

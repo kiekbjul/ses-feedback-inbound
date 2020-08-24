@@ -1,4 +1,5 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Http\Middleware;
 
 use Closure;
@@ -38,7 +39,7 @@ class AknowledgeInboundReceipt
 
         return response()->json([
             'success' => true,
-            'message' => 'Inbound receipt aknowledged.'
+            'message' => 'Inbound receipt aknowledged.',
         ]);
     }
 }

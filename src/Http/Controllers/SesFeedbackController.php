@@ -1,11 +1,11 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Kiekbjul\SesFeedbackInbound\Models\SesFeedback;
 use Illuminate\Support\Str;
 use Kiekbjul\SesFeedbackInbound\Events\SesFeedbackReceived;
+use Kiekbjul\SesFeedbackInbound\Models\SesFeedback;
 
 class SesFeedbackController
 {

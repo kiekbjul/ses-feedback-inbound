@@ -1,4 +1,5 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Traits;
 
 use Illuminate\Support\Str;

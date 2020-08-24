@@ -1,11 +1,10 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Kiekbjul\SesFeedbackInbound\Events\SesFeedbackSetupCompleted;
-use Kiekbjul\SesFeedbackInbound\Events\SesInboundSetupCompleted;
-use Kiekbjul\SesFeedbackInbound\Models\SesInbound;
 
 class AknowledgeFeedbackReceipt
 {
@@ -27,7 +26,7 @@ class AknowledgeFeedbackReceipt
 
         return response()->json([
             'success' => true,
-            'message' => 'Event Publishing receipt aknowledged.'
+            'message' => 'Event Publishing receipt aknowledged.',
         ]);
     }
 }
