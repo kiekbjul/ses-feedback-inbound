@@ -1,8 +1,8 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Kiekbjul\SesFeedbackInbound\Events\SesInboundReceived;
 use Kiekbjul\SesFeedbackInbound\Models\SesInbound;
 

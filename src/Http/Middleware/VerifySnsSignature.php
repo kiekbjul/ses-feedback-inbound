@@ -1,11 +1,10 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Http\Middleware;
 
-use Aws\Sns\Exception\InvalidSnsMessageException;
 use Aws\Sns\Message;
 use Aws\Sns\MessageValidator;
 use Closure;
-use Error;
 use Illuminate\Http\Request;
 use Throwable;
 

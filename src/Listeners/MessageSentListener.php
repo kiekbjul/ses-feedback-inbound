@@ -3,9 +3,7 @@
 namespace Kiekbjul\SesFeedbackInbound\Listeners;
 
 use Illuminate\Mail\Events\MessageSent;
-use Illuminate\Support\Facades\Log;
 use Kiekbjul\SesFeedbackInbound\Events\SesMessageSent;
-use Kiekbjul\SesFeedbackInbound\Models\SesMessage;
 use Kiekbjul\SesFeedbackInbound\Models\SesSentMessage;
 
 class MessageSentListener

@@ -1,4 +1,5 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Actions;
 
 use Aws\S3\Exception\S3Exception;
@@ -85,19 +86,19 @@ class SetupSesInbound
     protected function generateBucketPolicy($domain, $accountId)
     {
         return json_encode([
-            "Version" => "2012-10-17",
-            "Statement" => [
+            'Version' => '2012-10-17',
+            'Statement' => [
                 [
-                    "Sid" => "AllowSESPuts",
-                    "Effect" => "Allow",
-                    "Principal" => [
-                        "Service" => "ses.amazonaws.com",
+                    'Sid' => 'AllowSESPuts',
+                    'Effect' => 'Allow',
+                    'Principal' => [
+                        'Service' => 'ses.amazonaws.com',
                     ],
-                    "Action" => "s3:PutObject",
-                    "Resource" => "arn:aws:s3:::" . $this->inboundResourceName($domain) . "/*",
-                    "Condition" => [
-                        "StringEquals" => [
-                            "aws:Referer" => $accountId,
+                    'Action' => 's3:PutObject',
+                    'Resource' => 'arn:aws:s3:::'.$this->inboundResourceName($domain).'/*',
+                    'Condition' => [
+                        'StringEquals' => [
+                            'aws:Referer' => $accountId,
                         ],
                     ],
                 ],
@@ -110,7 +111,7 @@ class SetupSesInbound
         return [
             'Rule' => [
                 'Actions' => [
-                    $this->generateInboundAction($domain, $topicArn)
+                    $this->generateInboundAction($domain, $topicArn),
                 ],
                 'Enabled' => true,
                 'Name' => $this->inboundResourceName($domain),

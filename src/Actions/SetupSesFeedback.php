@@ -1,4 +1,5 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Actions;
 
 use Aws\Ses\Exception\SesException;

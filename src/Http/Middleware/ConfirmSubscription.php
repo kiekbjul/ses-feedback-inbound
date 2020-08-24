@@ -1,7 +1,7 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Http\Middleware;
 
-use Aws\Sns\Message;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -32,7 +32,7 @@ class ConfirmSubscription
 
         return response()->json([
             'success' => true,
-            'message' => 'Subscription confirmed.'
+            'message' => 'Subscription confirmed.',
         ]);
     }
 }

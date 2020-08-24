@@ -1,20 +1,17 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound;
 
 use Illuminate\Mail\Events\MessageSent;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
-use Kiekbjul\SesFeedbackInbound\Console\Commands\RemoveSesFeedbackCommand;
-use Kiekbjul\SesFeedbackInbound\Console\Commands\RemoveSesInboundCommand;
 use Kiekbjul\SesFeedbackInbound\Console\Commands\SetupSesFeedbackCommand;
 use Kiekbjul\SesFeedbackInbound\Console\Commands\SetupSesInboundCommand;
 use Kiekbjul\SesFeedbackInbound\Http\Controllers\SesFeedbackController;
 use Kiekbjul\SesFeedbackInbound\Http\Controllers\SesInboundController;
 use Kiekbjul\SesFeedbackInbound\Http\Middleware\AknowledgeFeedbackReceipt;
 use Kiekbjul\SesFeedbackInbound\Http\Middleware\AknowledgeInboundReceipt;
-use Kiekbjul\SesFeedbackInbound\Http\Middleware\AknowledgeSetupReceipt;
 use Kiekbjul\SesFeedbackInbound\Http\Middleware\ConfirmSubscription;
 use Kiekbjul\SesFeedbackInbound\Http\Middleware\VerifySnsSignature;
 use Kiekbjul\SesFeedbackInbound\Listeners\MessageSentListener;
@@ -75,11 +72,11 @@ class SesFeedbackInboundServiceProvider extends ServiceProvider
     private function registerPublishes()
     {
         $this->publishes([
-            __DIR__.'/../config/ses-feedback-inbound.php' => config_path('ses-feedback-inbound.php')
+            __DIR__.'/../config/ses-feedback-inbound.php' => config_path('ses-feedback-inbound.php'),
         ], 'ses-feedback-inbound-config');
 
         $this->publishes([
-            __DIR__.'/../database/migrations/' => database_path('migrations')
+            __DIR__.'/../database/migrations/' => database_path('migrations'),
         ], 'ses-feedback-inbound-migrations');
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -36,6 +37,7 @@ class SetupSesFeedbackCommand extends Command
     protected function askForFeedbackEvents()
     {
         $this->line("\n\nFor multiple Selections enter e.g. 2,3,4");
+
         return $this->choice(
             'Which Email Feedback do you want to receive?',
             SetupSesFeedback::$events,

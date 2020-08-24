@@ -1,8 +1,8 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Str;
 use Kiekbjul\SesFeedbackInbound\Actions\RemoveSesInbound;
 
 class RemoveSesInboundCommand extends Command

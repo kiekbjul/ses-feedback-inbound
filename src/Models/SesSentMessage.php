@@ -1,4 +1,5 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -6,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SesSentMessage extends Model
 {
     protected $fillable = [
-        'ses_message_id', 'full_message'
+        'ses_message_id', 'full_message',
     ];
 
     protected $casts = [

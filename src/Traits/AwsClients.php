@@ -1,4 +1,5 @@
 <?php
+
 namespace Kiekbjul\SesFeedbackInbound\Traits;
 
 use Aws\S3\S3Client;
@@ -16,10 +17,10 @@ trait AwsClients
         $credentials = [
             'credentials' => [
                 'key' => config('services.ses.key'),
-                'secret' => config('services.ses.secret')
+                'secret' => config('services.ses.secret'),
             ],
             'region' => config('services.ses.region'),
-            'version' => 'latest'
+            'version' => 'latest',
         ];
 
         $this->ses = new SesClient($credentials);
