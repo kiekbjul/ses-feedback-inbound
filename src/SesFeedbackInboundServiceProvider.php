@@ -12,6 +12,8 @@ use Kiekbjul\SesFeedbackInbound\Console\Commands\SetupSesFeedbackCommand;
 use Kiekbjul\SesFeedbackInbound\Console\Commands\SetupSesInboundCommand;
 use Kiekbjul\SesFeedbackInbound\Http\Controllers\SesFeedbackController;
 use Kiekbjul\SesFeedbackInbound\Http\Controllers\SesInboundController;
+use Kiekbjul\SesFeedbackInbound\Http\Middleware\AknowledgeFeedbackReceipt;
+use Kiekbjul\SesFeedbackInbound\Http\Middleware\AknowledgeInboundReceipt;
 use Kiekbjul\SesFeedbackInbound\Http\Middleware\AknowledgeSetupReceipt;
 use Kiekbjul\SesFeedbackInbound\Http\Middleware\ConfirmSubscription;
 use Kiekbjul\SesFeedbackInbound\Http\Middleware\VerifySnsSignature;
@@ -42,15 +44,16 @@ class SesFeedbackInboundServiceProvider extends ServiceProvider
     {
         Route::middleware([VerifySnsSignature::class, ConfirmSubscription::class])->group(function () {
             Route::name('ses-feedback')
+            ->middleware(AknowledgeFeedbackReceipt::class)
                 ->post(
-                    config('SesFeedbackInbound.route_feedback'),
+                    config('ses-feedback-inbound.route_feedback'),
                     SesFeedbackController::class
                 );
 
             Route::name('ses-inbound')
-                ->middleware(AknowledgeSetupReceipt::class)
+                ->middleware(AknowledgeInboundReceipt::class)
                 ->post(
-                    config('SesFeedbackInbound.route_inbound'),
+                    config('ses-feedback-inbound.route_inbound'),
                     SesInboundController::class
                 );
         });

@@ -6,6 +6,7 @@ use Illuminate\Mail\Events\MessageSent;
 use Illuminate\Support\Facades\Log;
 use Kiekbjul\SesFeedbackInbound\Events\SesMessageSent;
 use Kiekbjul\SesFeedbackInbound\Models\SesMessage;
+use Kiekbjul\SesFeedbackInbound\Models\SesSentMessage;
 
 class MessageSentListener
 {
@@ -33,7 +34,7 @@ class MessageSentListener
             return;
         }
 
-        $message = SesMessage::make([
+        $message = SesSentMessage::make([
             'ses_message_id' => $messageId->getFieldBody(),
             'full_message' => $event->message->getBody(),
         ]);
