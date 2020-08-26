@@ -5,14 +5,16 @@
 [![StyleCI](https://github.styleci.io/repos/289879761/shield?branch=master)](https://github.styleci.io/repos/289879761?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/kiekbjul/ses-feedback-inbound.svg?style=flat-square)](https://packagist.org/packages/kiekbjul/ses-feedback-inbound)
 
+**!!! Work in Progess !!!**
+Use at own risk in production
+
 ## Introduction
-[WIP] do not use in production
 
 ## Requirements
 
 Laravel v5.8.* | v6.x | v7.x
 
-## Installation
+## Installation & Setup
 
 **Install Package**
 ```sh
@@ -28,7 +30,7 @@ php artisan vendor:publish --tag="ses-feedback-inbound-config"
 **Publish migrations**
 (only if you want to save the incoming webhooks to your database automaticly)
 ```sh
-php artisan vendor:publish --tag="ses-feedback-inbound-config"
+php artisan vendor:publish --tag="ses-feedback-inbound-migrations"
 ```
 
 **Setup SES Feedback for Emails**
@@ -54,7 +56,15 @@ Using [Expose](#todo)
 
 ### Security
 
-## Credits
+### Roadmap
+- Documentation
+- Tests
+- Full customization: InboundConfig & FeedbackConfig
+- Add "Remove Inbound & Feedback Command"
+- Possibility to publish Delivery, Bounce, Complaint Events via Identity (Domain)
+- Custom open and click provider for domain
+- forwarding incoming emails to another destination
+- Add "Inbound via SNS Action or S3 Action"
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

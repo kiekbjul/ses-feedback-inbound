@@ -11,7 +11,7 @@ class SetupSesFeedback
 {
     use AwsClients, GenerateResourceName, SnsSubscribe;
 
-    public static $events = ['send', 'reject', 'delivery', 'bounce', 'complaint', 'click', 'open'];
+    public static $events = ['send', 'reject', 'delivery', 'bounce', 'complaint', 'click', 'open', 'delivery_delay'];
 
     public function run($domain, $events)
     {
